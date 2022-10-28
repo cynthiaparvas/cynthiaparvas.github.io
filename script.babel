@@ -23,7 +23,7 @@ function getQuotes() {
   return $.ajax({
     headers: { Accept: "application/json" },
     url:
-      "https://gist.githubusercontent.com/cynthiaparvas/f78ec39ccbec55e485c1ecd0580a83cc/raw/d51341f389ac96887915cbcbdec4f860061b94c9/lyrics.json",
+      "https://gist.githubusercontent.com/cynthiaparvas/d42e1578eb223ec436ad4f66c41c0bd1/raw/cd7137c6fd4e0db6049b44937a4769c222431d18/lyrics.json",
     success: function (jsonQuotes) {
       if (typeof jsonQuotes === "string") {
         quotesData = JSON.parse(jsonQuotes);
