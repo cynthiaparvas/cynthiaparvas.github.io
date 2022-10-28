@@ -1,0 +1,61 @@
+/*quote to generate randomly on first load:*/
+$(document).ready(function () {
+  getQuotes().then(() => {
+    getQuote();
+  });
+  $("#new-quote").on("click", getQuote);
+});
+const colors = [
+  "#36454F",
+  "#023020",
+  "#301934",
+  "#191970",
+  "#353935",
+  "##191970",
+  "#7393B3",
+  "#5F9EA0",
+  "#71797E",
+  "#483C32",
+  "#6F4E37",
+  "#A7C7E7"
+];
+function getQuotes() {
+  return $.ajax({
+    headers: { Accept: "application/json" },
+    url:
+      "https://gist.githubusercontent.com/cynthiaparvas/f78ec39ccbec55e485c1ecd0580a83cc/raw/d51341f389ac96887915cbcbdec4f860061b94c9/lyrics.json",
+    success: function (jsonQuotes) {
+      if (typeof jsonQuotes === "string") {
+        quotesData = JSON.parse(jsonQuotes);
+        console.log("quotesData");
+        console.log(quotesData);
+      }
+    }
+  });
+}
+function getRandomQuote() {
+  return quotesData.quotes[
+    Math.floor(Math.random() * quotesData.quotes.length)
+  ];
+}
+function getQuote() {
+  let randomQuote = getRandomQuote();
+  currentQuote = randomQuote.quote;
+  currentAuthor = randomQuote.author;
+
+  /*smooth transition:*/
+  $(".quote-text").animate({ opacity: 0 }, 500, function () {
+    $(this).animate({ opacity: 1 }, 500);
+    $("#text").text(randomQuote.quote);
+  });
+  $(".quote-author").animate({ opacity: 0 }, 500, function () {
+    $(this).animate({ opacity: 1 }, 500);
+    $("#author").html(randomQuote.author);
+  });
+  var color = Math.floor(Math.random() * colors.length);
+  $("html body").animate(
+    { backgroundColor: colors[color], color: colors[color] },
+    1000
+  );
+  $(".button").animate({ backgroundColor: colors[color] }, 1000);
+}
