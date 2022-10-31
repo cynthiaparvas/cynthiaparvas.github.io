@@ -6,37 +6,37 @@ $(document).ready(function () {
   $("#new-quote").on("click", getQuote);
 });
 const colors = [
-"#36454F",
-"#023020",
-"#301934",
-"#191970",
-"#353935",
-"##191970",
-"#7393B3",
-"#5F9EA0",
-"#71797E",
-"#483C32",
-"#6F4E37",
-"#A7C7E7"];
-
+  "#36454F",
+  "#023020",
+  "#301934",
+  "#191970",
+  "#353935",
+  "##191970",
+  "#7393B3",
+  "#5F9EA0",
+  "#71797E",
+  "#483C32",
+  "#6F4E37",
+  "#A7C7E7"
+];
 function getQuotes() {
   return $.ajax({
     headers: { Accept: "application/json" },
     url:
-    "https://gist.githubusercontent.com/cynthiaparvas/d42e1578eb223ec436ad4f66c41c0bd1/raw/22f0b77a8550ad63bf4291ebdc192d601720ac14/lyrics.json",
+      "https://gist.githubusercontent.com/cynthiaparvas/d42e1578eb223ec436ad4f66c41c0bd1/raw/97b04c19addc1d337935fabdb9d79dcea7faf9e3/lyrics.json",
     success: function (jsonQuotes) {
       if (typeof jsonQuotes === "string") {
         quotesData = JSON.parse(jsonQuotes);
         console.log("quotesData");
         console.log(quotesData);
       }
-    } });
-
+    }
+  });
 }
 function getRandomQuote() {
   return quotesData.quotes[
-  Math.floor(Math.random() * quotesData.quotes.length)];
-
+    Math.floor(Math.random() * quotesData.quotes.length)
+  ];
 }
 function getQuote() {
   let randomQuote = getRandomQuote();
@@ -54,8 +54,8 @@ function getQuote() {
   });
   var color = Math.floor(Math.random() * colors.length);
   $("html body").animate(
-  { backgroundColor: colors[color], color: colors[color] },
-  1000);
-
+    { backgroundColor: colors[color], color: colors[color] },
+    1000
+  );
   $(".button").animate({ backgroundColor: colors[color] }, 1000);
 }
