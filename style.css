@@ -5,10 +5,38 @@
   list-style: none;
   vertical-align: baseline;
 }
+
+/*avoid problems with mobile phones' small widths...*/
+@media screen and (max-width: 570px) {
+  #quote-box {
+    transform: scale(0.8);
+  }
+}
+@media screen and (max-width: 460px) {
+  #quote-box {
+    transform: scale(0.7);
+  }
+}
+@media screen and (max-width: 400px) {
+  #quote-box {
+    transform: scale(0.6);
+  }
+}
+@media screen and (max-width: 355px) {
+  #quote-box {
+    transform: scale(0.5);
+  }
+}
+@media screen and (max-width: 285px) {
+  #quote-box {
+    transform: scale(0.4);
+  }
+}
 div {
   position: relative;
   z-index: 2;
 }
+
 body {
   font-family: "Times New Roman", sans-serif;
   font-weight: 400;
@@ -17,6 +45,7 @@ body {
   align-items: center;
   height: 100vh;
 }
+
 #quote-box {
   border-radius: 65px;
   border-right: 4px solid gray;
@@ -28,11 +57,8 @@ body {
   display: table;
   background: linear-gradient(linen 55%, gray);
 }
+
 .quote-text {
-  i {
-    font-size: 1em;
-    margin-right: 0.4em;
-  }
   text-align: center;
   width: 450px;
   height: auto;
@@ -40,6 +66,11 @@ body {
   font-weight: 500;
   font-size: 1.75em;
 }
+.quote-text i {
+  font-size: 1em;
+  margin-right: 0.4em;
+}
+
 .quote-author {
   width: 450px;
   height: auto;
@@ -48,11 +79,13 @@ body {
   font-size: 1em;
   text-align: center;
 }
+
 .buttons {
   width: 450px;
   margin: auto;
   display: block;
 }
+
 .button {
   height: 38px;
   border: none;
@@ -66,13 +99,16 @@ body {
   opacity: 1;
   cursor: pointer;
 }
+
 button:hover {
   opacity: 0.9;
 }
+
 #tweet-quote:hover {
   color: #00acee;
   opacity: 0.9;
 }
+
 #tweet-quote {
   float: right;
   padding: 0;
@@ -84,10 +120,12 @@ button:hover {
   border-radius: 50%;
   width: 40px;
 }
+
 #new-quote {
   float: left;
   border-radius: 50%;
 }
+
 .footer {
   width: 450px;
   display: block;
@@ -98,11 +136,13 @@ button:hover {
   /*make the quote box stay centered:*/
   position: absolute;
 }
+
 a {
   font-weight: 500;
   text-decoration: none;
   color: blue;
 }
+
 a:hover {
   color: linen;
 }
