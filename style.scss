@@ -53,6 +53,7 @@ body {
   width: 450px;
   padding: 40px 50px;
   display: table;
+  box-shadow: 5px 5px 5px gray;
   background: linear-gradient(linen 55%, gray);
 }
 .quote-text {
@@ -122,6 +123,7 @@ button:hover {
   margin-top: 2%;
   font-size: 0.8em;
   color: linen;
+  text-shadow: 5px 5px 5px gray;
   /*make the quote box stay centered:*/
   position: absolute;
 }
