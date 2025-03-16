@@ -3,7 +3,7 @@
 Welcome to my portfolio! :) I'm still an undergraduate student so my story is just getting started, as is yours.
 Hopefully as the years go by I can get to experience more elaborate things about applying mathematics to the REAL world.
 
-I mainly changed the main colours of the website's design and replaced my own projects and descriptions with different links and preview images; so the credit to the CSS design goes to FreeCodeCamp's Sample Portfolio on CodePen: https://codepen.io/freeCodeCamp/pen/zNBOYG With the following License:
+I mainly changed the main colours of the website's design and replaced my own projects and descriptions with different links and preview images; so the credit to the CSS design goes to FreeCodeCamp's Sample Portfolio on CodePen, With the following License:
 
 Copyright (c) 2025 by freeCodeCamp.org (https://codepen.io/freeCodeCamp/pen/zNBOYG)
 
