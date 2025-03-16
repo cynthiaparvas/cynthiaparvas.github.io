@@ -14,13 +14,11 @@
   --main-gray: #32373c;
 }
 
-/* Base reset */
 * {
   margin: 0;
   padding: 0;
 }
 
-/* box-sizing and font sizing */
 *,
 *::before,
 *::after {
@@ -30,55 +28,31 @@
 html {
   box-sizing: border-box;
 
-  /* Set font size for easy rem calculations
-   * default document font size = 16px, 1rem = 16px, 100% = 16px
-   * (100% / 16px) * 10 = 62.5%, 1rem = 10px, 62.5% = 10px
-  */
   font-size: 62.5%;
   scroll-behavior: smooth;
 }
 
-/* A few media query to set some font sizes at different screen sizes.
- * This helps automate a bit of responsiveness.
- * The trick is to use the rem unit for size values, margin and padding.
- * Because rem is relative to the document font size
- * when we scale up or down the font size on the document
- * it will affect all properties using rem units for the values.
-*/
-
-/* I am using the em unit for breakpoints
- * The calculation is the following
- * screen size divided by browser base font size
- * As an example: a breakpoint at 980px
- * 980px / 16px = 61.25em
-*/
-
-/* 1200px / 16px = 75em */
 @media (max-width: 75em) {
   html {
     font-size: 60%;
   }
 }
 
-/* 980px / 16px = 61.25em */
 @media (max-width: 61.25em) {
   html {
     font-size: 58%;
   }
 }
 
-/* 460px / 16px = 28.75em */
 @media (max-width: 28.75em) {
   html {
     font-size: 55%;
   }
 }
 
-/* Base styles */
-
 body {
   font-family: 'Poppins', sans-serif;
-  font-size: 1.8rem; /* 18px */
+  font-size: 1.8rem;
   font-weight: 400;
   line-height: 1.4;
   color: var(--main-white);
@@ -108,12 +82,10 @@ a {
   color: var(--main-white);
 }
 
-img {
+img, iframe {
   display: block;
   width: 100%;
 }
-
-/* nav */
 
 .nav {
   display: flex;
@@ -152,8 +124,6 @@ img {
   background: var(--main-blue);
 }
 
-/* Welcome section */
-
 .welcome-section {
   display: flex;
   flex-direction: column;
@@ -171,8 +141,6 @@ img {
   font-style: italic;
   color: var(--main-cyan);
 }
-
-/* Projects section */
 
 .projects-section {
   text-align: center;
@@ -265,8 +233,6 @@ img {
   transition: transform 0.3s ease-out;
 }
 
-/* Contact section */
-
 .contact-section {
   display: flex;
   flex-direction: column;
@@ -312,24 +278,6 @@ img {
   transform: translateY(8px);
 }
 
-/* Footer */
-
-footer {
-  font-weight: 300;
-  display: flex;
-  justify-content: space-evenly;
-  padding: 2rem;
-  background: var(--main-gray);
-  border-top: 4px solid var(--main-cyan);
-}
-
-footer > p {
-  margin: 2rem;
-}
-
-footer i {
-  vertical-align: middle;
-}
 
 @media (max-width: 28.75em) {
   footer {
@@ -341,7 +289,6 @@ footer i {
 
 </head>
 <body>
-<!-- Header -->
 <link
   rel="stylesheet"
   href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
@@ -375,8 +322,6 @@ footer i {
   <h1>Cynthia Parvas</h1>
   <p>Undergraduate Math Student</p>
 </section>
-
-<!-- START PROJECTS SECTION -->
 
 <section id="projects" class="projects-section">
   <h2 class="projects-section-header">Projects & Written Work</h2>
@@ -460,8 +405,6 @@ footer i {
   ></a>
 </section>
 
-<!-- END PROJECTS SECTION -->
-
 <section id="contact" class="contact-section">
   <div class="contact-section-header">
     <h2>Get in Touch</h2>
@@ -476,11 +419,6 @@ footer i {
   </div>
 </section>
 
-<footer>
-  <p>
-   All rights reserved © Cynthia Parvas 2025
-  </p>
-</footer>
 </body>
       </html>
 
